@@ -58,7 +58,7 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    
+
     df = pd.read_csv(CITY_DATA[city])
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['month'] = df['Start Time'].dt.month
@@ -130,7 +130,7 @@ def user_stats(df):
     print('The counts of user types is: \n{}'.format(df['User Type'].value_counts()))
     # TO DO: Display counts of gender
     if('Gender' not in df):
-        print('We are sorry, gender data not available')
+        print('We are sorry, gender data is not available')
     else:
         print('The genders are: \n{}'.format(df['Gender'].value_counts()))
     # TO DO: Display earliest, most recent, and most common year of birth
@@ -142,7 +142,7 @@ def user_stats(df):
         print('The most common birth year is: {}'.format(df['Birth Year'].mode()[0]))
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-    
+
 def view_data(df):
     start = 0
     view_row = input('\nWould you like to view more rows of data? Enter yes or no.\n')
@@ -156,7 +156,7 @@ def view_data(df):
 
         except ValueError:
             print('Enter valid number of rows to view')
-            
+
 def main():
     while True:
         city, month, day = get_filters()
@@ -167,6 +167,6 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
         view_data(df)
-        
+
 if __name__ == "__main__":
 	main()
