@@ -1,11 +1,13 @@
-# project3
+# Project3
 
-#Date created: 9 10 2020
+#Date created: 9 Oct 2020
 
 # Project Title
 
 3rd project
 
-#Description
+# Description
 
-this is my third project in Udacity
+This is my third project in Udacity.
+
+This project is in python.
